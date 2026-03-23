@@ -1,43 +1,55 @@
 // Demo data for upcoming and past shows
 const upcoming = [
   {
-    date: "04/10/26",
-    band: "Coachella Weekend 1",
-    venue: "Empire Polo Club",
-
-  },
-  {
     date: "08/07/26",
     band: "Outside Lands",
     venue: "Golden Gate Park",
+
+  },
+  {
+    date: "05/30/26",
+    band: "Pitbull",
+    venue: "Hollywood Bowl",
     
   },
   {
-    date: "05/15/26",
-    band: "The Strokes",
-    venue: "Barclays Center",
+    date: "04/06/25",
+    band: "FKA Twigs",
+    venue: "The Greek Theatre",
    
   }
 ];
 
 const past = [
   {
-    date: "03/01/26",
-    band: "Arctic Monkeys",
-    venue: "The Forum",
+    date: "03/07/26",
+    band: "Aimee Mann",
+    venue: "The United Theater on Broadway",
+
+  },
+  {
+    date: "02/17/26",
+    band: "JJerome87",
+    venue: "Sid The Cat Auditorium",
+    
+  },
+  {
+    date: "12/12/25",
+    band: "AG Cook",
+    venue: "Hollywood Palladium",
    
   },
   {
-    date: "02/10/26",
-    band: "Tame Impala",
-    venue: "Madison Square Garden",
-    
+    date: "10/09/25",
+    band: "Haim",
+    venue: "Kia Forum",
+   
   },
   {
-    date: "01/20/26",
-    band: "Phoebe Bridgers",
-    venue: "Greek Theatre",
-    
+    date: "10/18/25",
+    band: "Lorde",
+    venue: "Kia Forum",
+   
   }
 ];
 
