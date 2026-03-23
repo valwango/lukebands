@@ -1,0 +1,72 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bands</title>  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="header">
+   
+    <a href="index.html" class="header-title-btn">bands</a>
+
+  </header>
+
+  <main>
+    <div class="star">★</div>
+    <form id="add-show-form">
+      <input type="text" id="band" placeholder="artist" required class="star-input" />
+      <input type="text" id="venue" placeholder="venue" required class="star-input" />
+      <div class="star-date-wrap">
+        <input type="text" id="date-fake" placeholder="date" class="star-input star-date-fake" autocomplete="off" />
+        <input type="date" id="date" required class="star-input star-date-real" />
+      </div>
+      <button type="submit" class="star-submit">add band</button>
+    </form>
+    <script>
+      // Date input placeholder swap logic
+      const dateFake = document.getElementById('date-fake');
+      const dateReal = document.getElementById('date');
+      dateFake.addEventListener('focus', () => {
+        dateFake.style.display = 'none';
+        dateReal.style.opacity = '1';
+        dateReal.style.pointerEvents = 'auto';
+        dateReal.focus();
+      });
+      dateReal.addEventListener('blur', () => {
+        if (!dateReal.value) {
+          dateFake.style.display = '';
+          dateReal.style.opacity = '0';
+          dateReal.style.pointerEvents = 'none';
+        }
+      });
+      // If user picks a date, keep real input visible
+      dateReal.addEventListener('input', () => {
+        if (dateReal.value) {
+          dateFake.style.display = 'none';
+          dateReal.style.opacity = '1';
+          dateReal.style.pointerEvents = 'auto';
+        }
+      });
+      document.getElementById('add-show-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const band = document.getElementById('band').value.trim();
+        const venue = document.getElementById('venue').value.trim();
+        const dateInput = dateReal.value;
+        if (!band || !venue || !dateInput) return;
+        // Convert YYYY-MM-DD to MM/DD/YY
+        const [yyyy, mm, dd] = dateInput.split('-');
+        const yy = yyyy.slice(-2);
+        const date = `${mm}/${dd}/${yy}`;
+        localStorage.setItem('newShow', JSON.stringify({ band, venue, date }));
+        window.location.href = 'index.html';
+      });
+    </script>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
