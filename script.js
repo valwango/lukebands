@@ -13,7 +13,7 @@ const upcoming = [
     
   },
   {
-    date: "04/06/25",
+    date: "04/06/26",
     band: "FKA Twigs",
     venue: "The Greek Theatre",
    
